@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  animal_type: MyString
+  neuter_status: false
+  name: MyString
+  age: 1
+
+two:
+  animal_type: MyString
+  neuter_status: false
+  name: MyString
+  age: 1
