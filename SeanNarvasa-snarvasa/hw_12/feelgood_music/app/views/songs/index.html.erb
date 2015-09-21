@@ -1,0 +1,46 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner cover" role="listbox">
+    <div class="item active">
+      <img src="http://i.imgur.com/OrwHrcJ.jpg" class="image_cover" alt="Pharell Williams">
+    </div>
+    <div class="item">
+      <img src="http://i.imgur.com/qTTcHxB.jpg" class="image_cover" alt="Daft Punk">
+    </div>
+    <div class="item">
+      <img src="http://i.imgur.com/gRwoSon.jpg" class="image_cover" alt="Ta">
+    </div>
+  </div>
+</div>
+
+<!-- Start Index -->
+<div class="col-md-12">
+  <div class="table-responsive">
+    <table class="table">
+      <!-- This is a table row with headers -->
+      <tr>
+        <th> </th>
+        <th>  </th>
+        <th>Actions</th>
+      </tr>
+
+      <%@songs.each do |song| %>
+      <tr>
+        <td class="col-md-2"></td>
+        <td> <%=song.title %> </td>
+        <td>
+          <%= link_to 'Edit', edit_song_path(song), class: 'btn btn-success btn-xs' %>
+          <%= link_to 'Delete', song, method: :delete, data: {confirm: "You sure you want to delete this song?"}, class: 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

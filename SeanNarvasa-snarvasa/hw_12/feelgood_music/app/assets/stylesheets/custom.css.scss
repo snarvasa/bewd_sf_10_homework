@@ -1,0 +1,59 @@
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+//fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.montserrat_font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lora_font {
+  font-family: 'Lora', serif;
+}
+
+.roboto_font {
+  font-family: 'Roboto', sans-serif;
+}
+
+.cover {
+  background-position:center;
+  background-repeat:no-repeat;
+  vertical-align: middle;
+  text-align: center;
+  height:600px;
+}
+
+.image_cover {
+  width: 100%;
+  background-size:cover;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.header {
+  background-image:url('logo.jpg');
+  width:100%;
+  background-size:cover;
+  vertical-align: middle;
+  text-align: center;
+  height:600px;
+}
+
+.header_artist_show {
+  background:rgba(0,0,0,0.6);
+  opacity: .8;
+  width:100%;
+  background-size:cover;
+  vertical-align: middle;
+  text-align: center;
+  height:600px;
+}
+
+.artist_info {
+  padding-top:250px;
+  text-align:center;
+}
