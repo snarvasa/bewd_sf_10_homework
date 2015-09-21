@@ -1,0 +1,9 @@
+== README
+
+This application is for a very simple blog application.
+Written by Sean Narvasa.
+
+Core bootstrap theme by David Miller
+https://github.com/IronSummitMedia/startbootstrap-grayscale
+
+Tutorial: http://guides.rubyonrails.org/getting_started.html
