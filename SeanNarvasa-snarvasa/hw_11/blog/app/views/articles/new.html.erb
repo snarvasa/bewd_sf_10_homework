@@ -1,0 +1,24 @@
+<%= render 'header' %>
+<div class="subnav">
+    <h2>Create a New Article</h2>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-md-4"></div>
+
+  <div class="col-md-4">
+    <%= render 'form' %>                <!--Renders the articles form partial-->
+  </div>
+
+  <div class="col-md-4"></div>
+</div>
+
+
+</body>
+<ul>
+  <li><%= link_to 'Back to Articles', articles_path %></li>
+  <li><%= link_to 'New Article', new_article_path %></li>
+</ul>

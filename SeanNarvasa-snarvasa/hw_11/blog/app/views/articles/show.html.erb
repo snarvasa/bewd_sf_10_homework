@@ -1,0 +1,19 @@
+<%= render 'header' %> 
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>       <!--Render the Article Title-->
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>        <!--Render the Article Text-->
+</p>
+
+<h2>Comments</h2>
+<%= render @article.comments %>  <!-- Render the comments partial -->
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>    <!-- Render the new comment form partial -->
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
