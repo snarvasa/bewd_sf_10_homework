@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'songs/new'
-
-  get 'songs/edit'
-
-  get 'songs/show'
-
-  get 'songs/index'
-
   resources :artists
   resources :songs
-  
+  resources :reviews
+
   #establish a custom route
   get 'about', to: "static_pages#about", as: "about"
   get 'test', to: "static_pages#test", as: "test"

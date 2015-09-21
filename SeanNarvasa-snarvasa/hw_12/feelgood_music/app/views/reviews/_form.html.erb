@@ -1,0 +1,8 @@
+<div class="panel-body">
+  <%= simple_form_for @review do |f| %>
+    <%= f.input :name, label: false, input_html: {placeholder: "Your Name"} %>
+    <%= f.input :review_body, label: false, as: :text, input_html: {placeholder: "What do you think?"}%>
+    <%= f.input :rating, label: false, input_html: {placeholder: "Out of 5 Stars"} %>
+    <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-danger"%>
+  <%end %>
+</div>

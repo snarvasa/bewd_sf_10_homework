@@ -1,4 +1,16 @@
-<div class="header"></div>
+<style media="screen">
+  .header_artist_show { background-image: url(<%= @artist.image_url %>); }
+</style>
+
+<div class="header_artist_show">
+  <div class="artist_info">
+    <h1><%= @artist.name%></h1>
+    <p><%= @artist.description %></p>
+  </div>
+</div>
+
+<BR>
+
 <div class="row">
   <div class="col-md-4"></div>
   <div class="col-md-4">
