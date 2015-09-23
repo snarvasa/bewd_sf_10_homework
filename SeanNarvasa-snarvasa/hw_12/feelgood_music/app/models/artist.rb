@@ -2,15 +2,15 @@
 #
 # Table name: artists
 #
-#  id          :integer          not null, primary key
-#  name        :string
-#  image_url   :string
-#  description :text
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                 :integer          not null, primary key
+#  name               :string
+#  image_url          :string
+#  description        :text
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
 #
 
 class Artist < ActiveRecord::Base
   has_many :songs
-  has_many :reviews
+  has_many :reviews, :as => :reviewable
 end

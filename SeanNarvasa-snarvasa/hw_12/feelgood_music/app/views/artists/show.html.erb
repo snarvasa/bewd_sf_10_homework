@@ -6,6 +6,8 @@
   <div class="artist_info">
     <h1><%= @artist.name%></h1>
     <p><%= @artist.description %></p>
+    <%= link_to 'Leave a Review', new_review_path, class: 'btn btn-primary btn-lg' %>
+    <%= link_to 'Add a song', new_song_path, class: 'btn btn-danger btn-lg' %>
   </div>
 </div>
 
@@ -14,7 +16,27 @@
 <div class="col-md-4">
     <h2>Song Listing</h2>
     <!-- TO DO: List out songs by Artist. Haven't figured out how to do this -->
-    <%= @artist.songs %>
+    <div class="table-responsive">
+        <table class="table table-hover">
+          <tr class="small">
+            <th>Song</th>
+            <th>Year</th>
+            <th>Length</th>
+            <th>Genre</th>
+            <th>Actions</th>
+          </tr>
+
+          <% @artist.songs.each do |song| %>
+            <tr>
+              <td><%= song.title %></td>
+              <td><%= song.length %></td>
+              <td><%= song.genre %></td>
+              <td>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
 </div>
 
 <div class="col-md-4"></div>

@@ -1,52 +1,32 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
-  end
+  before_action :set_reviewable_item
 
   def show
-    @review = get_review
+    @review = @reviewable_item.reviews.find(params[:id])
   end
 
   def new
-    @review = Review.new
+    @review = @reviewable_item.reviews.build
   end
 
   def create
-    @review = Review.new(review_params)
-    if @review.save
-      redirect_to review_path(@review)
+    @review = @reviewable_item.reviews.create(review_params)
+    if @review.save && params[:song_id]
+      redirect_to artist_song_path(@reviewable_item, @reviewable_item)
+    elsif @review.save && params[:artist_id]
+      redirect_to artist_path(@reviewable_item)
     else
-      render "new"
+      render 'new'
     end
-  end
-
-  def edit
-    @review = get_review
-  end
-
-  def update
-    @review = get_review
-    if @review.update(review_params)
-      redirect_to review_path(@review), notice: "Review Successfully Created"
-    else
-      render "edit"
-    end
-  end
-
-  def destroy
-    @review = get_review
-    @review.review
-    redirect_to review_path
   end
 
   private
+    def set_reviewable_item
+      reviewable_item = [Artist, Song].detect{|c| params["#{c.name.underscore}_id"]}
+      @reviewable_item = reviewable_item.find(params["#{reviewable_item.name.underscore}_id"])
+    end
 
-  def get_review
-    Review.find(params[:id])
-  end
-
-  def review_params
-    params.require(:review).permit(:rating, :name, :review_body)
-  end
-
+    def review_params
+      params.require(:review).permit(:reviewer, :rating, :review)
+    end
 end

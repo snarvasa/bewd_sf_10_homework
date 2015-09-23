@@ -1,4 +1,3 @@
 class Review < ActiveRecord::Base
-  belongs_to :artist
-  belongs_to :song
+  belongs_to :reviewable, :polymorphic => true
 end

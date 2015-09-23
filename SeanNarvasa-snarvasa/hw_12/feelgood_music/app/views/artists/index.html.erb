@@ -21,27 +21,14 @@
 </div>
 
 <!-- Start Index -->
-<div class="col-md-12">
-  <div class="table-responsive">
-    <table class="table">
-      <!-- This is a table row with headers -->
-      <tr>
-        <th> </th>
-        <th>  </th>
-        <th>Actions</th>
-      </tr>
-
-      <%@artists.each do |artist| %>
-      <tr>
-        <td class="col-md-2"> <%= link_to image_tag(artist.image_url, class: 'img-thumbnail img-reponsive'), artist %> </td>
-        <td> <%=artist.name %> </td>
-        <td>
-          <%=link_to 'Show', artist_path(artist), class: 'btn btn-default btn-xs' %>
-          <%= link_to 'Edit', edit_artist_path(artist), class: 'btn btn-success btn-xs' %>
-          <%= link_to 'Delete', artist, method: :delete, data: {confirm: "You sure you want to delete this artist?"}, class: 'btn btn-xs btn-danger' %>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+<%@artists.each do |artist| %>
+<div class="row">
+  <div class="col-xs-6 col-md-3 artist_cell">
+      <%=artist.name %>
+      <%= link_to image_tag(artist.image_url, class: 'img-thumbnail bigger_thumb'), artist %>
+      <%=link_to 'Show', artist_path(artist), class: 'btn btn-default btn-xs' %>
+      <%= link_to 'Edit', edit_artist_path(artist), class: 'btn btn-success btn-xs' %>
+      <%= link_to 'Delete', artist, method: :delete, data: {confirm: "You sure you want to delete this artist?"}, class: 'btn btn-xs btn-danger' %>
   </div>
+  <% end %>
 </div>

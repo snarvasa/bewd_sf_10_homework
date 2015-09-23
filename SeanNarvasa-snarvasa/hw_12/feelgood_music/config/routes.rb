@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-
   resources :artists
   resources :songs
   resources :reviews
+  
+  # Establish a custom route
+  get 'about', to: 'static_pages#about', as: 'about'
+  get 'test', to: 'static_pages#test', as: 'test'
 
-  #establish a custom route
-  get 'about', to: "static_pages#about", as: "about"
-  get 'test', to: "static_pages#test", as: "test"
-
-  #establish a root_path
+  # Establish a root page
   root 'static_pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
